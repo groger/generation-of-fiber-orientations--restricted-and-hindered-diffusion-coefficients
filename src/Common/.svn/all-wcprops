@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/fiber-sig/!svn/ver/10/Common
+END
+Exception.cc
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/fiber-sig/!svn/ver/10/Common/Exception.cc
+END
+Exception.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/fiber-sig/!svn/ver/10/Common/Exception.h
+END
+IndexValuePair.cc
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/fiber-sig/!svn/ver/10/Common/IndexValuePair.cc
+END
+IndexValuePair.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/fiber-sig/!svn/ver/10/Common/IndexValuePair.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/fiber-sig/!svn/ver/10/Common/CMakeLists.txt
+END

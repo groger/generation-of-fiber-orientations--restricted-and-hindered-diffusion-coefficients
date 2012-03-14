@@ -1,0 +1,2 @@
+/usr/bin/ar cr libcommon.a  CMakeFiles/common.dir/Exception.cc.o CMakeFiles/common.dir/IndexValuePair.cc.o
+/usr/bin/ranlib libcommon.a

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/biomed-resimg/NAMIC/DTITractographyPhantom/fiber-sig/Common/Exception.cc
+Exception.h
+-
+
+/biomed-resimg/NAMIC/DTITractographyPhantom/fiber-sig/Common/IndexValuePair.cc
+IndexValuePair.h
+-
+
+Common/Exception.h
+string
+-
+iostream
+-
+
+Common/IndexValuePair.h
+

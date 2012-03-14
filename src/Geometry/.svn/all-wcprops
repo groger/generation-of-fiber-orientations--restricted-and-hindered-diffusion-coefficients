@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/fiber-sig/!svn/ver/10/Geometry
+END
+Point.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/fiber-sig/!svn/ver/10/Geometry/Point.h
+END
+Vector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/fiber-sig/!svn/ver/10/Geometry/Vector.cc
+END
+Geometry_Common.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/fiber-sig/!svn/ver/10/Geometry/Geometry_Common.cc
+END
+Matrix.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/fiber-sig/!svn/ver/10/Geometry/Matrix.cc
+END
+Vector.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/fiber-sig/!svn/ver/10/Geometry/Vector.h
+END
+Geometry_Common.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/fiber-sig/!svn/ver/10/Geometry/Geometry_Common.h
+END
+Triangle.cc
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/fiber-sig/!svn/ver/10/Geometry/Triangle.cc
+END
+Matrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/fiber-sig/!svn/ver/10/Geometry/Matrix.h
+END
+Sphere.cc
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/fiber-sig/!svn/ver/10/Geometry/Sphere.cc
+END
+Triangle.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/fiber-sig/!svn/ver/10/Geometry/Triangle.h
+END
+Sphere.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/fiber-sig/!svn/ver/10/Geometry/Sphere.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/fiber-sig/!svn/ver/10/Geometry/CMakeLists.txt
+END
+Point.cc
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/fiber-sig/!svn/ver/10/Geometry/Point.cc
+END
