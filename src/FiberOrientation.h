@@ -428,7 +428,7 @@ int FiberOrientation::writeFiberOrientationsPerVoxelTextFile(const char* foImgFi
 
     ///////////// Write the EigenImage Hindered part image to a text file///////////////
     output("Writing the image to text file...please be patient");
- 	std::ofstream EigenHindered(EigenHinderedFileName);
+    std::ofstream EigenHindered(EigenHinderedFileName);
     EigenHindered<<"begin header"<<endl;
     EigenHindered<<"dimension="<<VOLUME_DIMENSION<<endl;
     EigenHindered<<"type=double"<<endl;
@@ -453,21 +453,30 @@ int FiberOrientation::writeFiberOrientationsPerVoxelTextFile(const char* foImgFi
 
 	EigenHindered<<"voxel="<<pixelIndex[0]<<" "<<pixelIndex[1]<<" "<<pixelIndex[2]<<endl;
         size3 = pixelValue[9];//size is stored in the last component of the tuple(pixelValue) stored in the voxel
-	
+	std::vector< double > eigeninfo(6); //#Dxx # Dxy # Dxz# Dyy # Dyz # Dzz 
 	if(size3!=0){//if there is a tensor for this voxel(voxel not empty)
-	
+		
+		for (int i=0; i < 3; i++){
+			eigeninfo[i] = pixelValue[i];
+		}
+		for (int i=4; i < 6; i++){
+			eigeninfo[i-1] = pixelValue[i];
+		}
+		eigeninfo[5] = pixelValue[8];
+		/*
 		double matrix[3][3];double V[3][3];double w[3];
 		for( int nl=0; nl<3; nl++)
 		{
 			for( int nc=0; nc<3; nc++)
 			{
-			matrix[nl][nc] = pixelValue[nl*3+nc];//we "reshape" tuple(tensor) to make a 3*3matrix
+				matrix[nl][nc] = pixelValue[nl*3+nc];//we "reshape" tuple(tensor) to make a 3*3matrix
+				
 			}
 		}
+		*/
+		//vtkMath::Diagonalize3x3(matrix,w,V);/*we estimate eigenvalues(w) and eigenvectors (V) of our current tensor(average tensor)*/
 
-		vtkMath::Diagonalize3x3(matrix,w,V);/*we estimate eigenvalues(w) and eigenvectors (V) of our current tensor(average tensor)*/
-
-		for(int i=0;i<3;i++){
+		/*for(int i=0;i<3;i++){
 			if(w[i]<0){ w[i]=fabs(w[i]);}
 		}
 		
@@ -476,17 +485,20 @@ int FiberOrientation::writeFiberOrientationsPerVoxelTextFile(const char* foImgFi
 			wv[i]=pow(w[i],(1/size3));//we apply ^(1/numbertensormultipliedinthisvoxel) on singular values
 			}
 
-		std::vector< double > eigeninfo(12);//we will store first 3eigenvalues then first eigenvector then second eigenvector then third eigenvector
-		for(int i=0;i<3;i++){eigeninfo[i]=wv[i];}/*first we store three eigenvalues in eigeninfo vector*/
+		//we will store first 3eigenvalues then first eigenvector then second eigenvector then third eigenvector
+		for(int i=0;i<3;i++){eigeninfo[i]=wv[i];}//first we store three eigenvalues in eigeninfo vector*/
 		
-		for(int j=0;j<3;j++){
+		/*for(int j=0;j<3;j++){
 			for(int i=0;i<3;i++){
-				eigeninfo[3+3*j+i]=V[i][j];/*then we store the three eigenvectors in eigeninfo*/
+				eigeninfo[3+3*j+i]=V[i][j];//then we store the three eigenvectors in eigeninfo
 			}
-		}
+		}*/
+		
+		
 		
 		EigenHindered_it.Set(eigeninfo);//we store eigenvalues and eigenvectors results in EigenImage
-		size4=12;/*this is the size of information containing in a voxel in our EigenImage(3coordinates of ;eigenvalues, three eigenvectors=12)*/
+		//size4=12;/*this is the size of information containing in a voxel in our EigenImage(3coordinates of ;eigenvalues, three eigenvectors=12)*/
+		size4=6;//#Dxx # Dxy # Dxz# Dyy # Dyz # Dzz 
 	}
 
 	else{ //if there is no tensor in the voxel (empty)
